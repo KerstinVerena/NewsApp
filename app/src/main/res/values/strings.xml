@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">News App</string>
+    <string name="no_data">No news available. Please make sure you have installed the newest
+        version of this app.</string>
+    <string name="no_connection">No news available. Please ensure that your device is connected
+        to the internet.</string>
+</resources>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/news_item"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/generalPadding"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/title"
+        style="@style/NewsTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="This the title of the news" />
+
+    <TextView
+        style="@style/NewsSection"
+        android:id="@+id/section"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text = "Section"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/NewsDate"
+            android:id="@+id/date"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            tools:text="05.05.2018, 12:45"/>
+
+        <TextView
+            style="@style/NewsAuthor"
+            android:id="@+id/author"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            tools:text="John Smith"/>
+
+    </LinearLayout>
+
+</LinearLayout>
