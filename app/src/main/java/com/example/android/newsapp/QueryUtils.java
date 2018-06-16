@@ -139,7 +139,7 @@ public class QueryUtils {
                     try {
                         Date unformattedDate = sourceDate.parse(dateSource);
                         SimpleDateFormat formattedDate = new SimpleDateFormat("dd.MM.yyyy " +
-                                "\nhh:mm");
+                                "\nHH:mm");
                         date = formattedDate.format(unformattedDate);
                     } catch (ParseException e) {
                         Log.e(LOG_TAG, "Error parsing date");
