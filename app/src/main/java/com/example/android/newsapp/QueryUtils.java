@@ -84,7 +84,7 @@ public class QueryUtils {
         // Extract the relevant fields from the JSON response and create a list of {@Link News}.
         List<News> newsList = extractFeatureFromJson(jsonResponse);
 
-        // Return the list of {@link Earthquake}s
+        // Return the list of {@link news}
         return newsList;
 
     }
@@ -95,7 +95,7 @@ public class QueryUtils {
             return null;
         }
 
-        // Create an empty ArrayList that we can start adding earthquakes to
+        // Create an empty ArrayList that we can start adding news to
         List<News> newsList = new ArrayList<>();
 
         // Try to parse the JSON response string. If there's a problem with the way the JSON
@@ -111,7 +111,7 @@ public class QueryUtils {
             // which represents a list of results (or "News").
             JSONArray newsArray = jsonResults.getJSONArray(JSON_KEY_RESULTS);
 
-            // For each earthquake in the earthquakeArray, create an {@link Earthquake} object
+            // For each News in the array, create an {@link News} object
             for (int i = 0; i < newsArray.length(); i++) {
 
                 // Get a single News at position i within the list of News.
@@ -161,11 +161,11 @@ public class QueryUtils {
                     author = NO_INFORMATION_PROVIDED;
                 }
 
-                // Create a new {@link News} object with the magnitude, location, time,
+                // Create a new {@link News} object with the title, section, date, author,
                 // and url from the JSON response.
                 News newsArticle = new News(title, section, date, author, url);
 
-                // Add the new {@link Earthquake} to the list of earthquakes.
+                // Add the new {@link News} to the list of news.
                 newsList.add(newsArticle);
             }
 
@@ -173,7 +173,7 @@ public class QueryUtils {
             // If an error is thrown when executing any of the above statements in the "try" block,
             // catch the exception here, so the app doesn't crash. Print a log message
             // with the message from the exception.
-            Log.e("QueryUtils", "Problem parsing the earthquake JSON results", e);
+            Log.e("QueryUtils", "Problem parsing the news JSON results", e);
         }
 
         // Return the list of newsArticles.
@@ -228,7 +228,7 @@ public class QueryUtils {
                 Log.e(LOG_TAG, "Error response code: " + urlConnection.getResponseCode());
             }
         } catch (IOException e) {
-            Log.e(LOG_TAG, "Problem retrieving the earthquake JSON results.", e);
+            Log.e(LOG_TAG, "Problem retrieving the News JSON results.", e);
         } finally {
             if (urlConnection != null) {
                 urlConnection.disconnect();
@@ -264,7 +264,6 @@ public class QueryUtils {
         Log.i(LOG_TAG, "readFromStream completed");
         return output.toString();
     }
-
 
 }
 
